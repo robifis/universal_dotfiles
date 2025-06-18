@@ -61,3 +61,5 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory sharehistory incappendhistory
 setopt histignorealldups histignoredups histignorespace
+
+. "$HOME/.atuin/bin/env"

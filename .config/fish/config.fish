@@ -26,6 +26,33 @@ function fish_mode_prompt
     echo ' '
 end
 
+# ~/.config/fish/config.fish
+
+# Initialize Starship Prompt
+# This should be at the end of the file
+starship init fish | source
+
+# Function to launch Yazi
+# More robust than an alias. Clears the screen and opens yazi.
+function y
+    clear
+    yazi $argv
+end
+
+
+# Function for interactive directory selection with fzf
+function zf
+    # Get the list of directories from zoxide and pipe it into fzf
+    # On selection (enter), cd into it. On cancel (escape), do nothing.
+    set -l dir (zoxide query -l | fzf --height 40% --reverse)
+    if test -n "$dir"
+        cd "$dir"
+    end
+end
+
+# Bind Alt+c to summon the interactive finder
+bind \ec zf
+
 # Set PATH (Fish usually handles this well by inheriting, but you can add more)
 # Ensure $HOME/.local/bin is in PATH if you install binaries there
 if not string match -q -- "*$HOME/.local/bin*" "$PATH"
@@ -103,14 +130,6 @@ else
 end
 
 # --- Other Fish Configurations (from previous setup) ---
-
-# Starship prompt
-if status is-interactive
-    if type -q starship
-        starship init fish | source
-    end
-end
-
 # Atuin init
 if status is-interactive
     if type -q atuin
