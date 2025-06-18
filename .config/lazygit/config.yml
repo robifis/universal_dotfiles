@@ -1,0 +1,22 @@
+# ~/.config/lazygit/config.yml
+gui:
+  theme:
+    activeBorderColor:
+      - '#fe8019' # orange
+      - bold
+    inactiveBorderColor:
+      - '#928374' # gray
+    optionsTextColor:
+      - '#83a598' # blue
+    selectedLineBgColor:
+      - '#3c3836' # dark grey
+    selectedRangeBgColor:
+      - '#3c3836'
+    cherryPickedCommitBgColor:
+      - '#504945'
+    cherryPickedCommitFgColor:
+      - '#d3869b' # purple
+    unstagedChangesColor:
+      - '#fb4934' # red
+    stagedChangesColor:
+      - '#b8bb26' # green

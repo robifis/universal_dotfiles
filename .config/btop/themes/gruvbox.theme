@@ -1,0 +1,30 @@
+# btop++ theme: "gruvbox"
+# author: (various)
+
+theme[main_bg]="#282828"
+theme[main_fg]="#ebdbb2"
+theme[title]="#ebdbb2"
+theme[hi_fg]="#fabd2f"
+theme[selected_bg]="#3c3836"
+theme[selected_fg]="#fe8019"
+theme[inactive_fg]="#928374"
+theme[graph_text]="#928374"
+theme[meter_bg]="#3c3836"
+theme[proc_misc]="#83a598"
+
+# Meters
+theme[cpu_start]="#b8bb26"
+theme[cpu_mid]="#fabd2f"
+theme[cpu_end]="#fb4934"
+theme[mem_start]="#b8bb26"
+theme[mem_mid]="#fabd2f"
+theme[mem_end]="#fb4934"
+theme[swap_start]="#d3869b"
+theme[swap_mid]="#b16286"
+theme[swap_end]="#cc241d"
+theme[net_start]="#83a598"
+theme[net_mid]="#458588"
+theme[net_end]="#076678"
+
+# Processes
+theme[process_owner]="#d5c4a1"

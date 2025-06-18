@@ -1,0 +1,114 @@
+/* ~/.config/waybar/style.css - Cleaned Up */
+
+@define-color gruvbox_bg0_hard #1d2021;
+@define-color gruvbox_bg0 #282828;
+@define-color gruvbox_bg1 #3c3836;
+@define-color gruvbox_fg1 #ebdbb2;
+@define-color gruvbox_gray #928374;
+
+/* Muted Accents (Keep the ones you'll actually use) */
+@define-color muted_aqua #689d6a;   /* For active workspace or generic highlight */
+@define-color muted_blue #7daea3;   /* For Pacman or Network */
+@define-color muted_red #cc241d;    /* For errors or muted states */
+@define-color muted_yellow #d79921; /* For network if not blue */
+@define-color muted_orange #d65d0e; /* For volume */
+@define-color muted_green #98971a;  /* For Ping success */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+    font-feature-settings: '"liga" 1, "calt" 1';
+}
+
+window#waybar {
+    background-color: @gruvbox_bg0;
+    color: @gruvbox_fg1;
+}
+
+/* General module styling for padding and margins */
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#custom-pacman,
+#custom-ping {
+    background-color: transparent;
+    padding: 0 10px;    /* Increased horizontal padding for fewer modules */
+    margin: 3px 5px;     /* Margin between modules */
+    color: @gruvbox_fg1;
+}
+
+#workspaces button {
+    padding: 0 8px;      /* Padding for workspace numbers */
+    color: @gruvbox_gray;
+    background-color: transparent;
+    border-radius: 3px;
+    margin: 0 2px;
+    font-size: 14px; /* Make workspace numbers slightly larger if just numbers */
+}
+
+#workspaces button:hover {
+    background-color: @gruvbox_bg1;
+    color: @gruvbox_fg1;
+}
+
+#workspaces button.focused,
+#workspaces button.active { /* If using an active indicator */
+    background-color: @muted_aqua;
+    color: @gruvbox_bg0_hard;
+    font-weight: bold;
+}
+
+/* If not using active indicator, maybe highlight focused workspace number */
+/* #workspaces button.focused {
+    color: @muted_aqua;
+} */
+
+
+#clock {
+    color: @gruvbox_fg1;
+    font-weight: bold;
+}
+
+#pulseaudio {
+    color: @muted_orange;
+}
+#pulseaudio.muted {
+    color: @muted_red;
+}
+
+#network {
+    color: @muted_yellow; /* Or @muted_blue */
+}
+#network.disconnected {
+    color: @muted_red;
+}
+
+#custom-pacman {
+    color: @muted_blue;
+}
+
+#custom-ping {
+    /* Color will be set by the exec script for success/fail if desired,
+       or set a default here. Success could be muted_green */
+    color: @muted_green;
+}
+/* You can make the "Fail" part of ping red if the script outputs specific classes,
+   but the current script just changes the text. So, red for fail would be harder with pure CSS here. */
+
+
+tooltip {
+    background-color: @gruvbox_bg1;
+    border: 1px solid @muted_aqua;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+tooltip label {
+    color: @gruvbox_fg1;
+    font-size: 12px;
+}

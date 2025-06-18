@@ -1,0 +1,66 @@
+# ~/.config/yazi/theme.toml
+# Yazi Gruvbox Dark Soft Theme
+
+[palette]
+bg = '#32302f' # A slightly softer bg for the main view
+fg = '#ebdbb2'
+
+black = '#282828'
+red = '#cc241d'
+green = '#98971a'
+yellow = '#d79921'
+blue = '#458588'
+magenta = '#b16286'
+cyan = '#689d6a'
+white = '#a89984'
+
+orange = '#d65d0e'
+gray = '#928374'
+light_gray = '#a89984'
+
+[theme]
+# Status Bar
+status_normal_fg = 'bg'
+status_normal_bg = 'blue'
+status_select_fg = 'bg'
+status_select_bg = 'orange'
+status_busy_fg = 'bg'
+status_busy_bg = 'yellow'
+
+# Input & Select Area
+input_fg = 'fg'
+input_bg = 'black'
+select_fg = 'bg'
+select_bg = 'blue'
+
+# Borders
+border_fg = 'gray'
+border_hi_fg = 'orange'
+
+# Other UI Elements
+tab_fg = 'gray'
+tab_hi_fg = 'fg'
+tab_hi_bg = 'bg'
+
+preview_fg = 'fg'
+preview_bg = 'bg'
+
+# File-specific colors
+file_fg = 'fg'
+dir_fg = 'blue'
+link_fg = 'cyan'
+link_hi_fg = 'orange'
+
+# Highlighting for hovered/selected item
+hovered_fg = 'fg'
+hovered_bg = '#504945' # Darker selection color
+
+inactive_fg = 'gray'
+inactive_bg = 'bg'
+
+# Git Status Colors
+git_added_fg = 'green'
+git_modified_fg = 'yellow'
+git_deleted_fg = 'red'
+git_renamed_fg = 'orange'
+git_untracked_fg = 'magenta'

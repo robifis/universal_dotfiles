@@ -1,0 +1,84 @@
+# ~/.config/alacritty/alacritty.toml
+
+# Shell
+terminal.shell = { program = "/usr/bin/fish", args = ["-l"] } # Uncomment and set if not using default shell
+
+# Window Configuration
+[window]
+padding = { x = 30, y = 60 } # Inner padding
+# opacity = 0.95 # Set 0.0 (transparent) to 1.0 (opaque). Comment out for full opacity.
+decorations = "none" # "full", "buttonless", or "none" - "none" is common for tiling WMs
+# startup_mode = "Maximized" # Or "Windowed", "Fullscreen"
+dynamic_title = true
+
+# Scrolling
+[scrolling]
+history = 10000
+multiplier = 3 # Scroll speed multiplier
+
+# Font Configuration
+[font]
+# normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+normal = { family = "Liga SF Mono NerdFont", style = "Regular" }
+bold = { family = "Liga SF Mono NerdFont", style = "Bold" }
+# bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+# italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+italic = { family = "Liga SF Mono NerdFont", style = "Italic" }
+bold_italic = { family = "Liga SF Mono NerdFont", style = "Bold Italic" }
+# bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 14 # Adjust to your preference
+
+# Offset for glyphs (useful if Nerd Font icons are misaligned)
+# glyph_offset = { x = 0, y = 0 }
+
+# Colors (Muted Gruvbox Dark)
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[colors.cursor]
+text = "#282828"  # Text color on the cursor
+cursor = "#fabd2f" # Cursor color itself (or a muted yellow like #d79921)
+
+[colors.selection]
+text = "#fbf1c7"
+background = "#504945"
+
+[colors.normal]
+black =   "#3c3836"
+red =     "#cc241d"
+green =   "#98971a" # Softer alternative: "#8F8F32"
+yellow =  "#d79921" # Softer alternative: "#C08830"
+blue =    "#458588" # Softer alternative: "#5F8F8F"
+magenta = "#b16286" # Softer alternative: "#A06A7A"
+cyan =    "#689d6a" # Softer alternative: "#78A070"
+white =   "#a89984"
+
+[colors.bright]
+black =   "#928374"
+red =     "#fb4934" # Softer alternative: "#E05040"
+green =   "#b8bb26" # Softer alternative: "#A8A830"
+yellow =  "#fabd2f" # Softer alternative: "#E0AA40"
+blue =    "#83a598" # Softer alternative: "#80A090"
+magenta = "#d3869b" # Softer alternative: "#C08090"
+cyan =    "#8ec07c" # Softer alternative: "#80B070"
+white =   "#fbf1c7"
+
+# Mouse Configuration
+[mouse]
+hide_when_typing = true
+
+# Bell
+[bell]
+animation = "EaseOutExpo"
+duration = 0 # Set to 0 to disable bell flash, or a small value for a quick flash
+# command = { program = "notify-send", args = ["Terminal Bell"] } # Or disable sound if not needed
+color = "#fabd2f" # Bell flash color
+
+# Key bindings (Alacritty takes keybindings from your WM mostly for window ops)
+# You can define terminal-specific ones here if needed, e.g., for scrolling, search.
+# [keyboard]
+# bindings = [
+#   { key = "V", mods = "Control|Shift", action = "Paste" },
+#   { key = "C", mods = "Control|Shift", action = "Copy" },
+# ]

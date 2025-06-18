@@ -1,0 +1,24 @@
+# Set the theme for syntax highlighting.
+# We are pointing to the file we just created (without the .tmTheme extension).
+--theme="Gruvbox-Dark"
+
+# Enable all UI elements: line numbers, Git modifications, file header, and grid.
+# This single option is a convenient shortcut for "--style=numbers,changes,header,grid".
+--style="full"
+
+# Always use the pager (like 'less') for output, even if the file fits on one screen.
+# This creates a consistent viewing experience.
+--paging="always"
+
+# Use 'less' as the pager and pass it some useful options.
+# -R: allows less to interpret color escape codes.
+# -F: quits if the entire file can be displayed on one screen.
+# -X: disables sending the termcap init/deinit strings to the terminal.
+--pager="less -RFX"
+
+# Set the width for tabs to 4 spaces, a common standard.
+--tabs=4
+
+# Use italic text for comments, types, etc. if your terminal supports it.
+# This requires a terminal and font that can render italics.
+--italic-text=always

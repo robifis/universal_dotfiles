@@ -1,0 +1,79 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 28, // Can adjust if needed
+    "spacing": 0, // Control with CSS margins
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "custom/pacman", "custom/ping"],
+
+    "hyprland/workspaces": {
+        "format": "{id}", // Display workspace number directly
+        // Or if you prefer icons that are just numbers:
+        // "format": "{icon}",
+        // "format-icons": {
+        //     "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅",
+        //     "6": "₆", "7": "₇", "8": "₈", "9": "₉", "10": "₁₀", // Subscript numbers
+        //     // Or plain numbers: "1": "1", "2": "2", etc.
+        //     "active": "", // Keep an active indicator if you still want it
+        //     "default": "{id}" // Fallback to ID if icon not found
+        // },
+        "on-click": "activate",
+        "all-outputs": true,
+        "persistent_workspaces": { // Show first 5 workspaces always
+            "1": [], "2": [], "3": [], "4": [], "5": []
+        }
+    },
+
+    "clock": {
+        // Corrected and simplified format
+        "format": "{:%a %d %b  %H:%M}", // Day dd Mon HH:MM
+        // If you want the icons back:
+        // "format": " {:%a %d %b}   {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1 // Update every second
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        // Use nf-fa-arrow_down and nf-fa-arrow_up for download/upload
+        "format-wifi": "󰖩  {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-ethernet": "  {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-disconnected": "󰖪 Off", // Simpler disconnected message
+        "tooltip-format": "{ifname} ({essid}): {ipaddr}/{cidr}",
+        "interval": 2 // Update every 2 seconds for network speed
+    },
+
+    "custom/pacman": {
+        "format": " {}", // Icon: nf-linux-archlinux
+        "exec": "pacman -Qq | wc -l",
+        "interval": 3600, // Check once per hour
+        "tooltip": true,
+        "tooltip-format": "Pacman Packages: {}"
+    },
+
+    "custom/ping": {
+        // Icon: 󰓅 (nf-mdi-access_point_network) or  (nf-oct-plug)
+        "format": "{}", // We'll format the output directly in the exec script
+        "exec": "ping_time=$(ping -c 1 -W 1 1.1.1.1 | grep 'time=' | awk -F 'time=' '{ print $2 }' | cut -d ' ' -f 1); if [ -n \"$ping_time\" ]; then echo \" ${ping_time}ms\"; else echo \" Fail\"; fi",
+        "interval": 5, // Ping every 5 seconds
+        "tooltip": true,
+        "tooltip-format": "Ping to 1.1.1.1: {}"
+    }
+}
