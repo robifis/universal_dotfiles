@@ -1,0 +1,167 @@
+#
+# ~/.config/i3/config
+# i3 Window Manager Configuration by Terminal God
+# Vim Keybindings & Gruvbox Soft Theme
+#
+
+# --- Variables ---
+set $mod Mod1                    # Your modifier key: Mod1 is ALT
+set $terminal_wezterm wezterm    # Default terminal
+set $terminal_alacritty alacritty # Alt terminal
+set $rofi_launcher rofi -show drun -theme ~/.config/rofi/gruvbox_soft.rasi # Rofi launcher
+
+# Gruvbox Soft Colors (Hex codes for i3)
+# Base00: #32302F (Dark background)
+# Base01: #3C3836
+# Base02: #504945
+# Base03: #665C54 (Neutral background)
+# Base04: #7C6F64
+# Base05: #928374 (Foreground)
+# Base06: #A89984
+# Base07: #EBDBB2 (Light foreground)
+# Red: #CC241D
+# Green: #98971A
+# Yellow: #D79921
+# Blue: #458588
+# Purple: #B16286
+# Aqua: #689D6A
+# Orange: #D65D0E
+
+# i3 Border Colors
+# class                 border  background text    indicator
+client.focused          #458588 #458588   #EBDBB2  #458588
+client.focused_inactive #3C3836 #3C3836   #928374  #3C3836
+client.unfocused        #3C3836 #3C3836   #928374  #3C3836
+client.urgent           #CC241D #CC241D   #EBDBB2  #CC241D
+client.placeholder      #32302F #32302F   #928374  #32302F # Same as unfocused, for consistency
+
+
+# --- Autostart Applications ---
+exec_always --no-startup-id picom --config ~/.config/picom.conf &
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg & # Set your wallpaper path
+exec_always --no-startup-id ~/.config/polybar/launch.sh & # Launch Polybar
+
+# Other startup applications
+# exec_always --no-startup-id setxkbmap -layout us & # Set keyboard layout if not handled by systemd
+# exec_always --no-startup-id nm-applet & # Network Manager Applet if you use it
+# exec_always --no-startup-id volumeicon & # Volume icon if you use it
+
+
+# --- Keybindings: Global ---
+
+# Launch Terminals
+bindsym $mod+Return exec $terminal_wezterm
+bindsym $mod+Shift+Return exec $terminal_alacritty
+
+# Kill focused window (d for delete/destroy)
+bindsym $mod+d kill
+
+# Exit i3 (Shift+e for exit)
+bindsym $mod+Shift+e exec "i3-msg exit"
+
+# Reload i3 config (r for reload)
+bindsym $mod+r reload
+
+# Open application launcher (Rofi)
+bindsym $mod+space exec $rofi_launcher
+
+# Fullscreen a window (f for fullscreen)
+bindsym $mod+f fullscreen toggle
+
+# Toggle floating mode for a window (t for toggle/transform)
+bindsym $mod+t floating toggle
+
+# Screenshot (grim for region, grimblast for more features, needs wl-clipboard for Wayland)
+# For Xorg, use scrot or maim. Install `scrot`: sudo pacman -S scrot
+bindsym $mod+Print exec "scrot -q 100 '%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i \$f'" # Full screen to clipboard
+bindsym $mod+Shift+Print exec "scrot -q 100 -s '%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i \$f'" # Select region to clipboard
+
+# --- Keybindings: Workspace Navigation (Vim-like Numbers) ---
+# Switch to workspace 1-10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move active window to workspace 1-10 (Shift + Vim Number)
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Switch to previous/next workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# --- Keybindings: Window Navigation (Vim-style h, j, k, l) ---
+# Focus adjacent window
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+k focus up
+bindsym $mod+j focus down
+
+# Move active window (Swap adjacent windows with Shift + Vim-style h, j, k, l)
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+j move down
+
+# --- Keybindings: Resizing Windows (Vim-like with Mod + Ctrl) ---
+# Enter resize mode
+bindsym $mod+v mode "resize"
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# --- Keybindings: Split Layouts & Monocle (Vim-like) ---
+# Split in horizontal direction (s for split)
+bindsym $mod+s split h
+# Split in vertical direction (v for vertical)
+bindsym $mod+v split v
+
+# Change container layout (m for monocle, t for tiling, s for stacked/tabbed)
+bindsym $mod+m layout stacking # Monocle (stacking is similar to i3's monocle behavior)
+bindsym $mod+g layout tabbed   # g for groups/tabbed
+bindsym $mod+e layout toggle split # Toggle between vertical/horizontal split
+
+# --- Scratchpad (s for scratchpad) ---
+# Move focused window to scratchpad
+bindsym $mod+minus move scratchpad
+# Show/hide scratchpad
+bindsym $mod+equal scratchpad show
+
+# --- Floating Window Management ---
+# Move floating window with mouse
+bindsym $mod+button1 move
+bindsym $mod+button2 floating toggle
+bindsym $mod+button3 resize
+
+# --- Gaps ---
+gaps inner 5
+gaps outer 10
+
+# --- Bar Configuration (Polybar will handle this, so disable i3bar) ---
+bar {
+    # You can disable the default i3bar if you use Polybar
+    # This example explicitly hides it
+    mode hide
+}

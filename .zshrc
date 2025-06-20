@@ -63,3 +63,5 @@ setopt appendhistory sharehistory incappendhistory
 setopt histignorealldups histignoredups histignorespace
 
 . "$HOME/.atuin/bin/env"
+
+source /home/bobby/.config/broot/launcher/bash/br

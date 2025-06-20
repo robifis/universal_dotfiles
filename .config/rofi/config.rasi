@@ -1,0 +1,32 @@
+// ~/.config/rofi/config.rasi
+// Rofi Main Configuration
+
+configuration {
+    modi: "drun,run,window";
+    display-drun: "Applications";
+    display-run: "Run";
+    display-window: "Windows";
+    sidebar-mode: false; // Show the modi sidebar
+    columns: 1;
+    lines: 10;
+    font: "JetBrainsMono Nerd Font 14"; // Match your Polybar font
+    show-icons: true;
+    icon-theme: "Papirus"; // Or your preferred icon theme
+    dpi: -1;
+    location: 0;
+    padding: 0;
+    cycle: true;
+    hide-scrollbar: true;
+    auto-select: false;
+    terminal: "alacritty"; // Default terminal for rofi to launch commands
+    case-sensitive: false;
+    matching: "fuzzy";
+    click-to-exit: true;
+}
+
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+
+@theme "/usr/share/rofi/themes/material.rasi"

@@ -1,0 +1,286 @@
+// ~/.config/rofi/gruvbox_soft.rasi
+// Gruvbox Soft Theme for Rofi
+* {
+    gruvbox-dark0-hard: #1d2021;
+    gruvbox-dark0:      #32302F;
+    gruvbox-dark0-soft: #32302F;
+    gruvbox-dark1:      #3C3836;
+    gruvbox-dark2:      #504945;
+    gruvbox-dark3:      #665C54;
+    gruvbox-dark4:      #7C6F64;
+    gruvbox-gray:       #928374; // This is actually base05
+    gruvbox-light0-hard: #EBDBB2;
+    gruvbox-light0:     #FBF1C7;
+    gruvbox-light0-soft: #F2E5BC;
+    gruvbox-light1:     #D5C4A1;
+    gruvbox-light2:     #BDAE93;
+    gruvbox-light3:     #A89984;
+    gruvbox-light4:     #928374;
+
+    gruvbox-red:        #CC241D;
+    gruvbox-green:      #98971A;
+    gruvbox-yellow:     #D79921;
+    gruvbox-blue:       #458588;
+    gruvbox-purple:     #B16286;
+    gruvbox-aqua:       #689D6A;
+    gruvbox-orange:     #D65D0E;
+
+    gruvbox-bright-red:     #FB4934;
+    gruvbox-bright-green:   #B8BB26;
+    gruvbox-bright-yellow:  #FABD2F;
+    gruvbox-bright-blue:    #83A598;
+    gruvbox-bright-purple:  #D3869B;
+    gruvbox-bright-aqua:    #8EC07C;
+    gruvbox-bright-orange:  #FE8019;
+
+    background-color: @gruvbox-dark0;
+    text-color: @gruvbox-gray;
+
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    background-color: @background-color;
+    border: 2px;
+    border-color: @gruvbox-blue;
+    padding: 10px;
+    width: 30%;
+    x-offset: 35%; /* Center horizontally */
+    y-offset: 20%; /* Position from top */
+}
+
+mainbox {
+    background-color: @background-color;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    spacing: 10px;
+    background-color: @gruvbox-dark1;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0 10px 0;
+}
+
+prompt {
+    background-color: @gruvbox-blue;
+    text-color: @gruvbox-light0-hard;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0px 5px 0px 0px;
+}
+
+entry {
+    spacing: 0px;
+    text-color: @text-color;
+    placeholder: "Search applications...";
+    placeholder-color: @gruvbox-dark4;
+}
+
+listview {
+    background-color: @background-color;
+    columns: 1;
+    lines: 7;
+    spacing: 5px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    scrollbar: false;
+    text-color: @text-color;
+}
+
+element {
+    background-color: @background-color;
+    padding: 8px;
+    border-radius: 5px;
+    text-color: @text-color;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element-icon {
+    size: 1em;
+    vertical-align: 0.5;
+    margin-right: 5px;
+}
+
+element selected {
+    background-color: @gruvbox-dark2;
+    text-color: @gruvbox-light0-hard;
+    border: 0 0 0 2px;
+    border-color: @gruvbox-yellow;
+}
+
+message {
+    background-color: @gruvbox-dark1;
+    text-color: @gruvbox-red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: @gruvbox-dark1;
+    text-color: @text-color;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 2px;
+}
+
+button selected {
+    background-color: @gruvbox-blue;
+    text-color: @gruvbox-light0-hard;
+}
+
+mode-switcher {
+    background-color: @gruvbox-dark1;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}// ~/.config/rofi/gruvbox_soft.rasi
+// Gruvbox Soft Theme for Rofi
+
+* {
+    gruvbox-dark0-hard: #1d2021;
+    gruvbox-dark0:      #32302F;
+    gruvbox-dark0-soft: #32302F;
+    gruvbox-dark1:      #3C3836;
+    gruvbox-dark2:      #504945;
+    gruvbox-dark3:      #665C54;
+    gruvbox-dark4:      #7C6F64;
+    gruvbox-gray:       #928374; // This is actually base05
+    gruvbox-light0-hard: #EBDBB2;
+    gruvbox-light0:     #FBF1C7;
+    gruvbox-light0-soft: #F2E5BC;
+    gruvbox-light1:     #D5C4A1;
+    gruvbox-light2:     #BDAE93;
+    gruvbox-light3:     #A89984;
+    gruvbox-light4:     #928374;
+
+    gruvbox-red:        #CC241D;
+    gruvbox-green:      #98971A;
+    gruvbox-yellow:     #D79921;
+    gruvbox-blue:       #458588;
+    gruvbox-purple:     #B16286;
+    gruvbox-aqua:       #689D6A;
+    gruvbox-orange:     #D65D0E;
+
+    gruvbox-bright-red:     #FB4934;
+    gruvbox-bright-green:   #B8BB26;
+    gruvbox-bright-yellow:  #FABD2F;
+    gruvbox-bright-blue:    #83A598;
+    gruvbox-bright-purple:  #D3869B;
+    gruvbox-bright-aqua:    #8EC07C;
+    gruvbox-bright-orange:  #FE8019;
+
+    background-color: @gruvbox-dark0;
+    text-color: @gruvbox-gray;
+
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    background-color: @background-color;
+    border: 2px;
+    border-color: @gruvbox-blue;
+    padding: 10px;
+    width: 30%;
+    x-offset: 35%; /* Center horizontally */
+    y-offset: 20%; /* Position from top */
+}
+
+mainbox {
+    background-color: @background-color;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    spacing: 10px;
+    background-color: @gruvbox-dark1;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0 10px 0;
+}
+
+prompt {
+    background-color: @gruvbox-blue;
+    text-color: @gruvbox-light0-hard;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0px 5px 0px 0px;
+}
+
+entry {
+    spacing: 0px;
+    text-color: @text-color;
+    placeholder: "Search applications...";
+    placeholder-color: @gruvbox-dark4;
+}
+
+listview {
+    background-color: @background-color;
+    columns: 1;
+    lines: 7;
+    spacing: 5px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    scrollbar: false;
+    text-color: @text-color;
+}
+
+element {
+    background-color: @background-color;
+    padding: 8px;
+    border-radius: 5px;
+    text-color: @text-color;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element-icon {
+    size: 1em;
+    vertical-align: 0.5;
+    margin-right: 5px;
+}
+
+element selected {
+    background-color: @gruvbox-dark2;
+    text-color: @gruvbox-light0-hard;
+    border: 0 0 0 2px;
+    border-color: @gruvbox-yellow;
+}
+
+message {
+    background-color: @gruvbox-dark1;
+    text-color: @gruvbox-red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: @gruvbox-dark1;
+    text-color: @text-color;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 2px;
+}
+
+button selected {
+    background-color: @gruvbox-blue;
+    text-color: @gruvbox-light0-hard;
+}
+
+mode-switcher {
+    background-color: @gruvbox-dark1;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
